@@ -12,6 +12,7 @@ const App = () => {
       </h1>
       <TodoApp />
       <ToastContainer
+      className="toast-container"
         position="top-right"
         autoClose={5000}
         hideProgressBar={false}

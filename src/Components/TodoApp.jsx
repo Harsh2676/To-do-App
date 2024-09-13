@@ -3,12 +3,18 @@ import "../Css/TodoApp.css";
 import { toast } from "react-toastify";
 
 const TodoApp = () => {
-  const [text, setText] = useState(null);
+  const [text, setText] = useState('');
   const [list, setList] = useState([]);
 
-  useEffect(()=> {
+  useEffect(() => {
     toast.success("Welcome to To-Do App");
-  },[]);
+    let data = JSON.parse(localStorage.getItem('todos'));
+
+    if (data != null) {
+      setList(data);
+    }
+
+  }, []);
 
   const handleinputchange = (e) => {
     const name = e.target.name;
@@ -25,10 +31,11 @@ const TodoApp = () => {
       return;
     } else {
       const newTodo = { text, isChecked: false };
-      setList([...list, newTodo]);
+      setList([newTodo,...list]);
       setText("");
       toast.success("Wooh, Task Is Added !");
       console.log(list);
+      localStorage.setItem('todos',JSON.stringify(list))
     }
   };
 
@@ -38,6 +45,7 @@ const TodoApp = () => {
         i === index ? { ...todo, isChecked: !todo.isChecked } : todo
       )
     );
+    localStorage.setItem('todos',JSON.stringify(list));
     toast.success("Toggled Todo Task Sucessfully !");
   };
 
@@ -45,6 +53,7 @@ const TodoApp = () => {
     setList(null);
     setList([]);
     toast.success("Todo-List Empty !");
+    localStorage.setItem('todos',null)
   };
 
   return (
@@ -55,10 +64,10 @@ const TodoApp = () => {
           <div className="img"></div>
         </h2>
         <button
+          className="button"
           onClick={() => {
             removealltodo();
           }}
-          className="button"
         >
           Remove All Todo's
         </button>

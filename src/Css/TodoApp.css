@@ -1,139 +1,169 @@
-.todo-app{
-    width: 100%;
-    max-width: 940px;
-    background-color: #fff;
-    margin: 100px 50px 20px;
-    padding: 40px 30px 70px;
-    border-radius: 10px;
+.todo-app {
+  width: 100%;
+  max-width: 940px;
+  background-color: #fff;
+  margin: 100px 50px 20px;
+  padding: 40px 30px 70px;
+  border-radius: 10px;
 
-    /* ****************** BG Blur ****************** */
-    background: rgba(255, 255, 255, 0.15);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
+  /* ****************** BG Blur ****************** */
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
 }
 
-.todo-app h2{
-    font-size: 24px;
-    color: greenyellow ;
-    display: flex;
+.todo-app h2 {
+  font-size: 24px;
+  color: greenyellow;
+  display: flex;
 }
 
 .top {
-    display: flex;
-    gap: 20px;
-    justify-content: space-between;
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
 }
-
 
 .header {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-direction: row;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
 }
 
-.img{
-    height: 40px;
-    width: 40px;
-    margin-left: 10px;
+.img {
+  height: 40px;
+  width: 40px;
+  margin-left: 10px;
 
-
-    background-clip: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-image: url(../assets/images/icon.png);
-    background-size: cover;
+  background-clip: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(../assets/images/icon.png);
+  background-size: cover;
 }
 
 .header .text {
-    font-size: 24px;
-    font-weight: 500;
-    padding-left: 30px;
+  font-size: 24px;
+  font-weight: 500;
+  padding-left: 30px;
 }
 
 .row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: whitesmoke;
-    border-radius: 30px;
-    padding-left: 20px;
-    margin-bottom: 25px;
-    margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: whitesmoke;
+  border-radius: 30px;
+  padding-left: 20px;
+  margin-bottom: 25px;
+  margin-top: 20px;
+  margin-right: 10px;
 }
 
 .row input {
-    flex: 1;
-    border: none;
-    outline: none;
-    background: none;
-    padding: 10px;
-    font-size: 16px;
+  flex: 1;
+  border: none;
+  outline: none;
+  background: none;
+  padding: 10px;
+  font-size: 16px;
 }
 
 .row button {
-    border: none;
-    outline: none;
-    padding: 16px 50px;
-    border-radius: 30px;
-    background-color: rgb(226, 110, 43);
-    color: #f0f0f0;
-    font-size: 16px;
-    cursor: pointer;
+  border: none;
+  outline: none;
+  padding: 16px 50px;
+  border-radius: 30px;
+  background-color: rgb(226, 110, 43);
+  color: #f0f0f0;
+  font-size: 16px;
+  cursor: pointer;
 }
 
 .button {
-    border: none;
-    outline: none;
-    padding: 16px 50px;
-    border-radius: 30px;
-    background-color: rgb(226, 110, 43);
-    color: #f0f0f0;
+  border: none;
+  outline: none;
+  padding: 16px 50px;
+  border-radius: 30px;
+  background-color: rgb(226, 110, 43);
+  color: #f0f0f0;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}
+@media screen and (max-width: 330px) {
+    .row{
+        padding: 0;
+    }
+    .top{
+        flex-direction: column;
+    }
+}
+@media screen and (max-width: 532px) {
+  .row input {
+    font-size: 12px;
+  }
+  .img {
+    height: 20px;
+    width: 20px;
+  }
+  .todo-app h2 {
     font-size: 16px;
-    font-weight: 500;
+  }
+  .row button {
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-size: 12px;
     cursor: pointer;
+  }
+
+  .button {
+    font-size: 10px;
+    padding: 12px;
+  }
 }
 
 #list-container li {
-    list-style: none;
-    font-size: 17px;
-    padding: 12px 8px 12px 50px;
-    user-select: none;
-    cursor: pointer;
-    position: relative;
-    color: #f0f0f0;
-    display: flex;
-    margin-bottom: 10px;
-    border-radius: 30px;
+  list-style: none;
+  font-size: 17px;
+  padding: 12px 8px 12px 50px;
+  user-select: none;
+  cursor: pointer;
+  position: relative;
+  color: #f0f0f0;
+  display: flex;
+  margin-bottom: 10px;
+  border-radius: 30px;
 }
 
 #list-container li:hover {
-    background-color: #f0f0f054;
-    transition: 0.5s ease-in-out;
+  background-color: #f0f0f054;
+  transition: 0.5s ease-in-out;
 }
 
 #list-container li::before {
-    content: "";
-    position: absolute;
-    height: 28px;
-    width: 28px;
-    border-radius: 50%;
-    background-image: url(../assets/images/unchecked.png);
-    background-size: cover;
-    background-position: center;
-    top: 12px;
-    left: 8px;
+  content: "";
+  position: absolute;
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  background-image: url(../assets/images/unchecked.png);
+  background-size: cover;
+  background-position: center;
+  top: 12px;
+  left: 8px;
 }
 
-#list-container li.checked{
-    color: #555;
-    text-decoration: line-through;
-    background-color: #f0f0f02c;
-    transition: 0.5s ease-in-out;
+#list-container li.checked {
+  color: #555;
+  text-decoration: line-through;
+  background-color: #f0f0f02c;
+  transition: 0.5s ease-in-out;
 }
 
-#list-container li.checked::before{
-    background-image: url(../assets/images/checked.png);
+#list-container li.checked::before {
+  background-image: url(../assets/images/checked.png);
 }
